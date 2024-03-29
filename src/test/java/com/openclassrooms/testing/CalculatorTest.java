@@ -3,7 +3,7 @@ package com.openclassrooms.testing;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.lang.System.Logger;
+import org.apache.logging.log4j.Logger;
 import java.text.MessageFormat;
 import java.time.Duration;
 import java.time.Instant;
@@ -23,6 +23,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import com.openclassrooms.testing.calcul.domain.Calculator;
+
 @ExtendWith(LoggingExtension.class)
 public class CalculatorTest {
 
@@ -30,7 +32,7 @@ public class CalculatorTest {
 
 	private Calculator calculatorUnderTest;
 
-	private Logger logger;
+	private Logger logger; // Utilisez org.apache.logging.log4j.Logger
 
 	public void setLogger(Logger logger) {
 		this.logger = logger;
